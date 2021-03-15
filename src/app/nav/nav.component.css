@@ -3,6 +3,8 @@
     height: 100vh;
 }
 
+a:visited { color: black; text-decoration: none;}
+a:hover { color: #ffc0cb; text-decoration: line-through;}
 
 
 

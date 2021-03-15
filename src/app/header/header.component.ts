@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScullyRoutesService } from '@scullyio/ng-lib';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  all:number = 0;
 
-  constructor() { }
+  constructor(public scully : ScullyRoutesService) { }
 
   ngOnInit(): void {
+    this.scully.available$.subscribe(
+      scully => { 
+        this.all = scully.length - 1;
+      }
+    ); 
   }
 
 }
